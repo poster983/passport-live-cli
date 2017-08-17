@@ -26,7 +26,7 @@ var inquirer = require('inquirer');
 var chalk = require("chalk");
 var Spinner = require("cli-spinner").Spinner;
 var passport = require("../api/passport.js");
-
+inquirer.registerPrompt('datetime', require('inquirer-datepicker-prompt'))
 
 exports.home = function(done) {
 	var question = [
@@ -61,7 +61,10 @@ exports.promptHome = function(done) {
 }
 
 exports.accountPermissionKey = function(done) {
-
+	var data = {};
+	data.permissions = {};
+	data.parms = {};
+	data.timeout = {};
 	var spinner = new Spinner('Loading User Groups.. %s');
 	spinner.setSpinnerString('|/-\\');
 	spinner.start();
@@ -78,10 +81,46 @@ exports.accountPermissionKey = function(done) {
 		      type: 'checkbox',
 		      message: 'Choose a User Group:',
 		      choices: uG
+		    },
+		    {
+		    	name: 'expiration',
+		        type: 'list',
+		    	message: 'How do you want it to expire?',
+		      	choices: ["Tally", "Date/Time"]
 		    }
+
 		];
 		inquirer.prompt(questions).then(function(result) {
-			console.log(result)
+			data.permissions.userGroups = result.userGroups;
+			switch(result.expiration) {
+				case "Tally":
+					tallyQuestions(function(tally) {
+						data.timeout.tally = tally;
+					})
+					break;
+				case "Date/Time":
+					break;
+			}
 		});
 	});
+
+	function tallyQuestions(done) {
+		var tallyQuestions = [
+			{
+		      name: 'tally',
+		      type: 'input',
+		      message: 'How many times can this key be used:',
+		      validate: function( value ) {
+		        if (value.length && !isNaN(parseInt(value))) {
+		          return true;
+		        } else {
+		          return 'Please enter a number';
+		        }
+		      }
+		    }
+		];
+		inquirer.prompt(tallyQuestions).then(function(result) {
+			return done(parseInt(result.tally));
+		})
+	}
 }
