@@ -5,7 +5,6 @@ exports.login = function(email, password, done) {
 		if(err) {
 			return done(err);
 		}
-		console.log(body)
 		return done(null, res, body);
 	})
 }
