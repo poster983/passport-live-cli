@@ -24,8 +24,10 @@
   "homepage": "https://github.com/poster983/passport-live-cli#readme",
   "dependencies": {
     "chalk": "^2.1.0",
+    "cli-spinner": "^0.2.6",
     "config": "^1.26.2",
     "inquirer": "^3.2.2",
+    "lowdb": "^0.16.2",
     "request": "^2.81.0"
   }
 }
