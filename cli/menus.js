@@ -96,9 +96,13 @@ exports.accountPermissionKey = function(done) {
 				case "Tally":
 					tallyQuestions(function(tally) {
 						data.timeout.tally = tally;
+						console.log(data)
 					})
 					break;
 				case "Date/Time":
+					datetimeQuestions(function(date) {
+						console.log(date)
+					});
 					break;
 			}
 		});
@@ -122,5 +126,24 @@ exports.accountPermissionKey = function(done) {
 		inquirer.prompt(tallyQuestions).then(function(result) {
 			return done(parseInt(result.tally));
 		})
+	}
+	function datetimeQuestions(done) {
+		var dtQ = [
+			{
+			  type: 'datetime',
+			  name: 'dt',
+			  message: 'When would you like a table?',
+			  format: ['d', '-', 'm', '-', 'yyyy', ' ', 'h', ':', 'MM', ' ', 'TT'],
+			  time: {
+			    minutes: {
+			      interval: 15
+			    }
+			  }
+			}
+		];
+		inquirer.prompt(dtQ).then(function(result) {
+			return done(result);
+		})
+
 	}
 }
