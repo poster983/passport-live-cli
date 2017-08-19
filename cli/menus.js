@@ -57,13 +57,12 @@ exports.home = function(done) {
 
 
 exports.promptHome = function(done) {
-
+	exports.home();
 }
 
 exports.accountPermissionKey = function(done) {
 	var data = {};
 	data.permissions = {};
-	data.parms = {};
 	data.timeout = {};
 	var spinner = new Spinner('Loading User Groups.. %s');
 	spinner.setSpinnerString('|/-\\');
@@ -92,16 +91,18 @@ exports.accountPermissionKey = function(done) {
 		];
 		inquirer.prompt(questions).then(function(result) {
 			data.permissions.userGroups = result.userGroups;
+			data.parms = {};
 			switch(result.expiration) {
 				case "Tally":
 					tallyQuestions(function(tally) {
 						data.timeout.tally = tally;
-						console.log(data)
+						sendData(data);
 					})
 					break;
 				case "Date/Time":
 					datetimeQuestions(function(date) {
-						console.log(date)
+						data.timeout.time = date;
+						sendData(data);
 					});
 					break;
 			}
@@ -145,5 +146,29 @@ exports.accountPermissionKey = function(done) {
 			return done(result);
 		})
 
+	}
+	function sendData(data) {
+		
+		var spinner = new Spinner('Generating Key.. %s');
+		spinner.setSpinnerString('|/-\\');
+		spinner.start();
+		passport.security.newPermissionKey(data, function(err, res) {
+			spinner.stop();
+			if(err) {
+				console.error(chalk.bgRed("ERROR: ") + chalk.red(err));
+				exports.promptHome();
+			} else if(res.code == 201) {
+				console.log(chalk.bgGreen.black("Key Created!"));
+				console.log(chalk.bgBlue.black("Useful Info:"))
+				console.log(chalk.green("	- Your New Key: " + res.body.key))
+				console.log(chalk.green("	- Account Signup Link:"), chalk.blue("YOUR DOMAIN HERE TODO/auth/signup?pk=" + res.body.key) );
+				exports.promptHome();
+			} else {
+				console.error(chalk.bgRed("ERROR: ") + chalk.red("Expected 201, got " + res.code));
+
+				exports.promptHome();
+			}
+			//if(res.stst)
+		});
 	}
 }

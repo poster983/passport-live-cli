@@ -28,6 +28,11 @@ exports.login = function(email, password, done) {
 		if(err) {
 			return done(err);
 		}
+		if(response.headers.errormessage) {
+			var err = new Error(response.headers.errormessage);
+			err.status = response.statusCode;
+			return done(err)
+		}
 		return done(null, body.token);
 	})
 }

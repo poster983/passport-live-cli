@@ -30,6 +30,11 @@ exports.userGroups = function(done) {
 		if(error) {
 			return done(error);
 		}
+		if(response.headers.errormessage) {
+			var err = new Error(response.headers.errormessage);
+			err.status = response.statusCode;
+			return done(err)
+		}
 		return done(null, {res: response, body: JSON.parse(body), code: response.statusCode});
 	})
 }
