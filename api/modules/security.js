@@ -22,5 +22,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 var request = require("request");
-var config = require("config");
+var cliGlobals = require("../../globals.js");
 
+exports.newPermissionKey = function(data, done) {
+	request.post({url: 'http://localhost:3000/api/security/key', headers: {"Authorization": cliGlobals.get.JWT()}, form: data}, function (error, response, body) {
+		if(error) {
+			return done(error);
+		}
+		if(response.headers.errormessage) {
+			var err = new Error(response.headers.errormessage);
+			err.status = response.statusCode;
+			return done(err)
+		}
+		return done(null, {res: response, body: JSON.parse(body), code: response.statusCode});
+	})
+}

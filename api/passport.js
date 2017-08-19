@@ -22,7 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 var auth = require("./modules/auth.js");
-var server = require("./modules/server.js")
+var server = require("./modules/server.js");
+var security = require("./modules/security.js");
 
 exports.auth = auth;
 exports.server = server;
+exports.security = security;
