@@ -1,6 +1,9 @@
 {
   "auth": {
-    "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc5N2ZlODFiLWNmMGEtNDQ4Yi04NzgyLTZlMzViNzExZTUzNSIsImlhdCI6MTUwMzM1NDY1MywiZXhwIjoxNTAzNDQxMDUzfQ.kj7y4W3UOaJj9fA5Tq45H7qlobKCrGhy1ErlGvkpbdg"
+    "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc5N2ZlODFiLWNmMGEtNDQ4Yi04NzgyLTZlMzViNzExZTUzNSIsImlhdCI6MTUwMzM1Njg3MywiZXhwIjoxNTAzNDQzMjczfQ.opUqODKyk5zCBeQn0D6xWI1nKgobBOG7Sf58p98ODpA"
   },
-  "user": []
+  "user": [],
+  "server": {
+    "url": "http://localhost:3000"
+  }
 }

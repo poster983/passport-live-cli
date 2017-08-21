@@ -27,7 +27,7 @@ const adapter = new FileSync('./userData/db.json')
 const db = low(adapter)
 const uuidv4 = require("uuid/v4");
 
-db.defaults({ auth: {}, user: [] })
+db.defaults({ auth: {}, user: [], server: {url: null} })
   .write()
 
 exports.get = {};
@@ -39,11 +39,15 @@ exports.set.JWT = function(jwt) {
 	db.set('auth.token', jwt).write();
 }
 exports.get.JWT = function() {
-	db.get('auth.token').value();
+	return db.get('auth.token').value();
 }
 
 exports.set.user = function(userId, email) {
 	db.get('user')
 	  .push({ id: uuidv4(), email: email, userId: userId})
 	  .write()
+}
+
+exports.get.serverUrl = function() {
+	return db.get('server.url').value();
 }

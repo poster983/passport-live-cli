@@ -25,10 +25,11 @@ var request = require("request");
 var db = require("../../db.js");
 
 exports.newPermissionKey = function(data, done) {
-	request.post({url: 'http://localhost:3000/api/security/key', headers: {"Authorization": 123}, form: data}, function (error, response, body) {
+	request.post({url: db.get.serverUrl() + '/api/security/key', headers: {"Authorization": db.get.JWT()}, form: data}, function (error, response, body) {
 		if(error) {
 			return done(error);
 		}
+		console.log(db.get.JWT())
 		if(response.headers.errormessage) {
 			var err = new Error(response.headers.errormessage);
 			err.status = response.statusCode;

@@ -26,9 +26,21 @@ var cli = require("./cli/cli-api.js");
 var passport = require("./api/passport.js");
 var chalk = require("chalk");
 const db = require("./db.js");
+var program = require('commander');
+/*
+program
+  .version(process.env.npm_package_version)
+  .description('run normal cli')
+  .parse(process.argv);
 
+program
+  .command('setup')
+  .description('setup the cli')
+  .action(function(){
+    console.log("setup Mode")
+  });*/
 //if(db.low.has('user.email').value()) {
-	if(false) {
+if(false) {
 	cli.menus.home();
 } else {
 	cli.auth.getFullLogin(function(result) {
@@ -40,6 +52,7 @@ const db = require("./db.js");
 				db.set.JWT(res.token);
 				//db.set.user(res.userId, result.email);
 				cli.menus.home();
+
 			}
 
 		})

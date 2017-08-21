@@ -22,9 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 var request = require("request");
-var config = require("config");
+var db = require("../../db.js");
+
 exports.login = function(email, password, done) {
-	request.post(config.get("passportURL") + "/api/auth/login", {form: {email: email, password: password}}, function(err, res, body) {
+	request.post(db.get.serverUrl() + "/api/auth/login", {form: {email: email, password: password}}, function(err, res, body) {
 		if(err) {
 			return done(err);
 		}

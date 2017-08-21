@@ -23,3 +23,4 @@ SOFTWARE.
 */
 exports.auth = require("./auth.js")
 exports.menus = require("./menus.js")
+exports.setup = require("./setup.js");

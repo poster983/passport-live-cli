@@ -21,20 +21,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-var request = require("request");
-var config = require("config");
-var db = require("../../db.js");
 
-exports.userGroups = function(done) {
-	request({url: db.get.serverUrl() + '/api/server/config/userGroups', headers: {"Authorization": 345}}, function (error, response, body) {
-		if(error) {
-			return done(error);
-		}
-		if(response.headers.errormessage) {
-			var err = new Error(response.headers.errormessage);
-			err.status = response.statusCode;
-			return done(err)
-		}
-		return done(null, {res: response, body: JSON.parse(body), code: response.statusCode});
-	})
-}

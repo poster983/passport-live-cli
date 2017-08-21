@@ -26,6 +26,7 @@ var inquirer = require('inquirer');
 var chalk = require("chalk");
 var Spinner = require("cli-spinner").Spinner;
 var passport = require("../api/passport.js");
+var db = require("../db.js");
 inquirer.registerPrompt('datetime', require('inquirer-datepicker-prompt'))
 
 exports.home = function(done) {
@@ -155,16 +156,16 @@ exports.accountPermissionKey = function(done) {
 		passport.security.newPermissionKey(data, function(err, res) {
 			spinner.stop();
 			if(err) {
-				console.error(chalk.bgRed("ERROR: ") + chalk.red(err));
+				console.error(chalk.bgRed.black("ERROR: ") + chalk.red(err));
 				exports.promptHome();
 			} else if(res.code == 201) {
 				console.log(chalk.bgGreen.black("Key Created!"));
 				console.log(chalk.bgBlue.black("Useful Info:"))
 				console.log(chalk.green("	- Your New Key: " + res.body.key))
-				console.log(chalk.green("	- Account Signup Link:"), chalk.blue("YOUR DOMAIN HERE TODO/auth/signup?pk=" + res.body.key) );
+				console.log(chalk.green("	- Account Signup Link:"), chalk.blue(db.get.serverUrl() + "/auth/signup?pk=" + res.body.key) );
 				exports.promptHome();
 			} else {
-				console.error(chalk.bgRed("ERROR: ") + chalk.red("Expected 201, got " + res.code));
+				console.error(chalk.bgRed.black("ERROR: ") + chalk.red("Expected 201, got " + res.code));
 
 				exports.promptHome();
 			}
