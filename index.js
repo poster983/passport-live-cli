@@ -25,9 +25,15 @@ SOFTWARE.
 var cli = require("./cli/cli-api.js");
 var passport = require("./api/passport.js");
 var chalk = require("chalk");
+const low = require('lowdb')
+const FileSync = require('./node_modules/lowdb/adapters/FileSync')
+const adapter = new FileSync('./userData/db.json')
+const db = low(adapter)
 
+db.set('user.name', 'typicode')
+  .write()
 
-cli.menus.home();
+//cli.menus.home();
 
 /*
 cli.auth.getFullLogin(function(result) {

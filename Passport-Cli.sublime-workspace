@@ -388,6 +388,7 @@
 	"buffers":
 	[
 		{
+<<<<<<< Updated upstream
 			"file": "index.js",
 			"settings":
 			{
@@ -397,6 +398,8 @@
 			}
 		},
 		{
+=======
+>>>>>>> Stashed changes
 			"file": "cli/menus.js",
 			"settings":
 			{
@@ -406,28 +409,14 @@
 			}
 		},
 		{
-			"file": "cli/auth.js",
-			"settings":
-			{
-				"buffer_size": 1780,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "cli/cli-api.js",
-			"settings":
-			{
-				"buffer_size": 1151,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "api/passport.js",
 			"settings":
 			{
+<<<<<<< Updated upstream
+				"buffer_size": 1780,
+=======
 				"buffer_size": 1288,
+>>>>>>> Stashed changes
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -436,16 +425,50 @@
 			"file": "api/modules/auth.js",
 			"settings":
 			{
+<<<<<<< Updated upstream
+				"buffer_size": 1151,
+=======
 				"buffer_size": 1556,
+>>>>>>> Stashed changes
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "api/modules/security.js",
+			"settings":
+			{
+<<<<<<< Updated upstream
+				"buffer_size": 1288,
+=======
+				"buffer_size": 1657,
+>>>>>>> Stashed changes
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "api/modules/server.js",
+			"settings":
+			{
+<<<<<<< Updated upstream
+				"buffer_size": 1556,
+=======
+				"buffer_size": 1672,
+>>>>>>> Stashed changes
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "package.json",
 			"settings":
 			{
+<<<<<<< Updated upstream
 				"buffer_size": 873,
+=======
+				"buffer_size": 828,
+>>>>>>> Stashed changes
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -501,12 +524,15 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/josep/Documents/GitKraken/passport-live-cli",
-		"/C/Users/josep/Documents/GitKraken/passport-live-cli/cli",
-		"/C/Users/josep/Documents/GitKraken/passport-live-cli/config"
+		"/home/joseph/Documents/Code/GitKraken/passport-live-cli",
+		"/home/joseph/Documents/Code/GitKraken/passport-live-cli/api",
+		"/home/joseph/Documents/Code/GitKraken/passport-live-cli/api/modules"
 	],
 	"file_history":
 	[
+		"/home/joseph/Documents/Code/GitKraken/passport-live-cli/cli/auth.js",
+		"/home/joseph/Documents/Code/GitKraken/passport-live-cli/cli/cli-api.js",
+		"/home/joseph/Documents/Code/GitKraken/passport-live-cli/index.js",
 		"/C/Users/josep/Documents/GitKraken/passport-live-cli/data/config.json",
 		"/C/Users/josep/Documents/GitKraken/passport-live-cli/config/default.json",
 		"/C/Users/josep/Documents/GitKraken/passport-live-cli/api/auth.js",
@@ -689,52 +715,79 @@
 	"groups":
 	[
 		{
+<<<<<<< Updated upstream
 			"selected": 6,
+=======
+			"selected": 0,
+>>>>>>> Stashed changes
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1488,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								19,
-								19
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "cli/menus.js",
 					"semi_transient": false,
 					"settings":
 					{
+<<<<<<< Updated upstream
+						"buffer_size": 1488,
+=======
 						"buffer_size": 4895,
+>>>>>>> Stashed changes
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< Updated upstream
+								19,
+								19
+=======
+								4089,
+								4089
+>>>>>>> Stashed changes
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2269.0,
+						"zoom_level": 1.0
+					},
+<<<<<<< Updated upstream
+					"stack_index": 1,
+=======
+					"stack_index": 0,
+>>>>>>> Stashed changes
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "api/passport.js",
+					"semi_transient": false,
+					"settings":
+					{
+<<<<<<< Updated upstream
+						"buffer_size": 4895,
+=======
+						"buffer_size": 1288,
+>>>>>>> Stashed changes
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+<<<<<<< Updated upstream
 								0,
 								0
+=======
+								1288,
+								1288
+>>>>>>> Stashed changes
 							]
 						],
 						"settings":
@@ -750,26 +803,33 @@
 				},
 				{
 					"buffer": 2,
-					"file": "cli/auth.js",
+					"file": "api/modules/auth.js",
 					"semi_transient": false,
 					"settings":
 					{
+<<<<<<< Updated upstream
 						"buffer_size": 1780,
+=======
+						"buffer_size": 1556,
+>>>>>>> Stashed changes
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< Updated upstream
 								0,
 								0
+=======
+								1515,
+								1515
+>>>>>>> Stashed changes
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -780,19 +840,28 @@
 				},
 				{
 					"buffer": 3,
-					"file": "cli/cli-api.js",
+					"file": "api/modules/security.js",
 					"semi_transient": false,
 					"settings":
 					{
+<<<<<<< Updated upstream
 						"buffer_size": 1151,
+=======
+						"buffer_size": 1657,
+>>>>>>> Stashed changes
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< Updated upstream
 								0,
 								0
+=======
+								1655,
+								1655
+>>>>>>> Stashed changes
 							]
 						],
 						"settings":
@@ -808,19 +877,28 @@
 				},
 				{
 					"buffer": 4,
-					"file": "api/passport.js",
+					"file": "api/modules/server.js",
 					"semi_transient": false,
 					"settings":
 					{
+<<<<<<< Updated upstream
 						"buffer_size": 1288,
+=======
+						"buffer_size": 1672,
+>>>>>>> Stashed changes
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< Updated upstream
 								0,
 								0
+=======
+								1577,
+								1577
+>>>>>>> Stashed changes
 							]
 						],
 						"settings":
@@ -831,11 +909,12 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
+<<<<<<< Updated upstream
 					"file": "api/modules/auth.js",
 					"semi_transient": false,
 					"settings":
@@ -864,19 +943,30 @@
 				},
 				{
 					"buffer": 6,
+=======
+>>>>>>> Stashed changes
 					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
+<<<<<<< Updated upstream
 						"buffer_size": 873,
+=======
+						"buffer_size": 828,
+>>>>>>> Stashed changes
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
+<<<<<<< Updated upstream
 								51,
 								51
+=======
+								0,
+								0
+>>>>>>> Stashed changes
 							]
 						],
 						"settings":
@@ -889,11 +979,15 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< Updated upstream
 					"stack_index": 0,
+=======
+					"stack_index": 6,
+>>>>>>> Stashed changes
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "config/default.json",
 					"semi_transient": false,
 					"settings":
@@ -917,7 +1011,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+<<<<<<< Updated upstream
 					"stack_index": 7,
+=======
+					"stack_index": 5,
+>>>>>>> Stashed changes
 					"type": "text"
 				}
 			]
