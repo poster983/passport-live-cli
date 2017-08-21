@@ -25,26 +25,28 @@ SOFTWARE.
 var cli = require("./cli/cli-api.js");
 var passport = require("./api/passport.js");
 var chalk = require("chalk");
-const low = require('lowdb')
-const FileSync = require('./node_modules/lowdb/adapters/FileSync')
-const adapter = new FileSync('./userData/db.json')
-const db = low(adapter)
+const db = require("./db.js");
 
-db.set('user.name', 'typicode')
-  .write()
+//if(db.low.has('user.email').value()) {
+	if(false) {
+	cli.menus.home();
+} else {
+	cli.auth.getFullLogin(function(result) {
+		passport.auth.login(result.email, result.password, function(err, res) {
+			if(err) {
+				console.log(chalk.bgRed("ERROR: ") + chalk.red(err));
+			} else {
+				console.log(res)
+				db.set.JWT(res.token);
+				//db.set.user(res.userId, result.email);
+				cli.menus.home();
+			}
 
+		})
+	})
+}
 //cli.menus.home();
 
 /*
-cli.auth.getFullLogin(function(result) {
-	console.log(passport.auth.login(result.email, result.password, function(err, res, body) {
-		if(err) {
-			console.log(chalk.bgRed("ERROR: ") + chalk.red(err));
-		} else {	
-			token = body.token;
-
-		}
-
-	}))
-})*/
+*/
 

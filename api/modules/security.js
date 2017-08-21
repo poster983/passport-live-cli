@@ -22,15 +22,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 var request = require("request");
-var cliGlobals = require("../../globals.js");
+var db = require("../../db.js");
 
 exports.newPermissionKey = function(data, done) {
-	request.post({url: 'http://localhost:3000/api/security/key', headers: {"Authorization": cliGlobals.get.JWT()}, form: data}, function (error, response, body) {
+	request.post({url: 'http://localhost:3000/api/security/key', headers: {"Authorization": 123}, form: data}, function (error, response, body) {
 		if(error) {
 			return done(error);
 		}
 		if(response.headers.errormessage) {
 			var err = new Error(response.headers.errormessage);
+			err.status = response.statusCode;
+			return done(err)
+		} else if (response.statusCode == 401) {
+			var err = new Error("Unauthorized");
 			err.status = response.statusCode;
 			return done(err)
 		}

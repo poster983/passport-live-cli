@@ -21,27 +21,29 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+const low = require('lowdb')
+const FileSync = require('./node_modules/lowdb/adapters/FileSync')
+const adapter = new FileSync('./userData/db.json')
+const db = low(adapter)
+const uuidv4 = require("uuid/v4");
+
+db.defaults({ auth: {}, user: [] })
+  .write()
 
 exports.get = {};
 exports.set = {};
-
-
-var JWT = null;
-exports.get.JWT = function() {
-	return JWT;
-}
+exports.low = db;
 
 exports.set.JWT = function(jwt) {
-	JWT = jwt;
+	console.log("write")
+	db.set('auth.token', jwt).write();
+}
+exports.get.JWT = function() {
+	db.get('auth.token').value();
 }
 
-
-var userId = null;
-
-exports.get.userId = function() {
-	return userId
-}
-
-exports.set.userId = function(uid) {
-	userId = uid;
+exports.set.user = function(userId, email) {
+	db.get('user')
+	  .push({ id: uuidv4(), email: email, userId: userId})
+	  .write()
 }

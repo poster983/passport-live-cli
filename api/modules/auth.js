@@ -28,12 +28,18 @@ exports.login = function(email, password, done) {
 		if(err) {
 			return done(err);
 		}
-		if(response.headers.errormessage) {
-			var err = new Error(response.headers.errormessage);
-			err.status = response.statusCode;
+		
+		if(res.headers.errormessage) {
+			var err = new Error(res.headers.errormessage);
+			err.status = res.statusCode;
+			return done(err)
+		} else if(res.statusCode == 401) {
+			var err = new Error("Unauthorized");
+			err.status = res.statusCode;
 			return done(err)
 		}
-		return done(null, body.token);
+
+		return done(null, JSON.parse(body));
 	})
 }
 

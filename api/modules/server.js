@@ -23,10 +23,10 @@ SOFTWARE.
 */
 var request = require("request");
 var config = require("config");
-var cliGlobals = require("../../globals.js");
+var db = require("../../db.js");
 
 exports.userGroups = function(done) {
-	request({url: 'http://localhost:3000/api/server/config/userGroups', headers: {"Authorization": cliGlobals.get.JWT()}}, function (error, response, body) {
+	request({url: 'http://localhost:3000/api/server/config/userGroups', headers: {"Authorization": 345}}, function (error, response, body) {
 		if(error) {
 			return done(error);
 		}
