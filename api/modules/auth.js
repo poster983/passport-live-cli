@@ -29,7 +29,7 @@ exports.login = function(email, password, done) {
 		if(err) {
 			return done(err);
 		}
-		
+		console.log(res.statusCode)
 		if(res.headers.errormessage) {
 			var err = new Error(res.headers.errormessage);
 			err.status = res.statusCode;
@@ -39,7 +39,7 @@ exports.login = function(email, password, done) {
 			err.status = res.statusCode;
 			return done(err)
 		}
-
+		//console.log(body)
 		return done(null, JSON.parse(body));
 	})
 }
