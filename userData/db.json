@@ -1,6 +1,6 @@
 {
   "auth": {
-    "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc5N2ZlODFiLWNmMGEtNDQ4Yi04NzgyLTZlMzViNzExZTUzNSIsImlhdCI6MTUwMzM1Njg3MywiZXhwIjoxNTAzNDQzMjczfQ.opUqODKyk5zCBeQn0D6xWI1nKgobBOG7Sf58p98ODpA"
+    "token": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZlYmZmZTY5LTAxODUtNDZhYy1hMDA1LTA5YzFjNmRlMTU0ZiIsImlhdCI6MTUwNTA5NjI2NywiZXhwIjoxNTA1MTgyNjY3fQ.LlhJdgT5SxZV9Vs12HbrQ_Mn6GikJnVX1WrEckHhGPM"
   },
   "user": [],
   "server": {

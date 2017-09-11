@@ -134,8 +134,8 @@ exports.accountPermissionKey = function(done) {
 			{
 			  type: 'datetime',
 			  name: 'dt',
-			  message: 'When would you like a table?',
-			  format: ['d', '-', 'm', '-', 'yyyy', ' ', 'h', ':', 'MM', ' ', 'TT'],
+			  message: 'On what day should this key expire?',
+			  format: ['yyyy', '-', 'mm', '-', 'dd'],
 			  time: {
 			    minutes: {
 			      interval: 15
@@ -144,7 +144,7 @@ exports.accountPermissionKey = function(done) {
 			}
 		];
 		inquirer.prompt(dtQ).then(function(result) {
-			return done(result);
+			return done(result.dt);
 		})
 
 	}

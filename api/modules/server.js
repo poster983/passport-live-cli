@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 var request = require("request");
-var config = require("config");
 var db = require("../../db.js");
 
 exports.userGroups = function(done) {
